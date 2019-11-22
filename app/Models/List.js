@@ -16,7 +16,6 @@ export default class List {
       <div class="col-4 m-3 p-3 rounded bg-warning">
       <h1 class="text-center border-bottom">${this.name}</h1>
       <form class="form-group" onsubmit="app.listController.addItem(event, '${this.id}')">
-          <label for="item">Task</label>
           <input type="text" id="item" class="form-control" placeholder="Enter Task">
           <button type="submit" class="btn btn-danger mt-2">Submit</button>
           <button type="button" class="btn btn-dark mt-2" onclick="app.listController.removeList('${this.id}')">Delete</button>
@@ -28,11 +27,10 @@ export default class List {
     return `
     <div class="col-4 m-3 p-3 rounded bg-warning">
       <h1 class="text-center border-bottom">${this.name}</h1>
-      <dl class="ml-5">
+      <dl class="ml-5 d-flex justify-content-between align-items-center">
       ${this.itemTemplate}
       </dl>
       <form class="form-group" onsubmit="app.listController.addItem(event, '${this.id}')">
-          <label for="name">Task</label>
           <input type="text" id="name" class="form-control" placeholder="Enter Task">
           <button type="submit" class="btn btn-danger mt-2">Submit</button>
           <button type="button" class="btn btn-dark mt-2" onclick="app.listController.removeList('${this.id}')">Delete</button>

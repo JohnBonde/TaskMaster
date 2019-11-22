@@ -24,6 +24,12 @@ class ListService {
     list.item.push(item);
     store.saveState();
   }
+  removeItem(listId, itemId) {
+    let toRemoveItem = store.State.lists.find(i => i.id == listId);
+    let itemIndex = toRemoveItem.item.findIndex(i => i.id == itemId);
+    toRemoveItem.item.splice(itemIndex, 1);
+    store.saveState();
+  }
 
 }
 

@@ -20,11 +20,48 @@ export default class ListController {
 
   //TODO: Your app will need the ability to create, and delete both lists and listItems
   removeList(listId) {
-    ListService.removeList(listId);
-    _drawLists();
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.value) {
+        ListService.removeList(listId);
+        _drawLists();
+        Swal.fire(
+          'Deleted!',
+          'Your list has been deleted.',
+          'success'
+        )
+      }
+    })
+  }
+  removeItem(listId, itemId) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.value) {
+        ListService.removeItem(listId, itemId);
+        _drawLists();
+        Swal.fire(
+          'Deleted!',
+          'Your task has been deleted.',
+          'success'
+        )
+      }
+    })
   }
   addList(event) {
-    debugger;
     event.preventDefault();
     let formData = event.target;
     let newList = {
