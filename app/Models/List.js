@@ -16,7 +16,7 @@ export default class List {
       <div class="grid-item col-4 m-3 p-3 rounded bg-warning">
       <h1 class="text-center border-bottom">${this.name}</h1>
       <form class="form-group" onsubmit="app.listController.addItem(event, '${this.id}')">
-          <input type="text" id="item" class="form-control" placeholder="Enter Task">
+          <input type="text" id="item" class="form-control" placeholder="Enter Task" required>
           <button type="submit" class="btn btn-danger mt-2">Submit</button>
           <button type="button" class="btn btn-dark mt-2" onclick="app.listController.removeList('${this.id}')">Delete</button>
       </form>
@@ -31,7 +31,7 @@ export default class List {
       ${this.itemTemplate}
       </dl>
       <form class="form-group" onsubmit="app.listController.addItem(event, '${this.id}')">
-          <input type="text" id="name" class="form-control" placeholder="Enter Task">
+          <input type="text" id="name" class="form-control" placeholder="Enter Task" required>
           <button type="submit" class="btn btn-danger mt-2">Submit</button>
           <button type="button" class="btn btn-dark mt-2" onclick="app.listController.removeList('${this.id}')">Delete</button>
       </form>
