@@ -8,7 +8,9 @@ export default class Item {
   }
   get Template() {
     return `
-    <dt class= "justify-content-between">${this.name}</dt>
-    <i class="far fa-trash-alt" onclick="app.listController.removeItem('${this.listId}','${this.id}')" id="trashcan"></i>`
+    <div class="col-12 stuff">
+    <dt>${this.name}</dt>
+    <i class="far fa-trash-alt" onclick="app.listController.removeItem('${this.listId}','${this.id}')" id="trashcan"></i>
+    </div>`
   }
 }

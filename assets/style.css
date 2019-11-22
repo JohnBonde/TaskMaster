@@ -10,3 +10,8 @@ dl {
   display: flex;
   justify-content: space-between;
 }
+.stuff {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

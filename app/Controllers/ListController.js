@@ -1,5 +1,6 @@
 import ListService from "../Services/ListService.js";
 import store from "../store.js";
+import Item from "../Models/Item.js";
 
 //TODO Don't forget to render to the screen after every data change.
 function _drawLists() {
@@ -9,6 +10,7 @@ function _drawLists() {
     listsTemplate += list.TemplateItem
   });
   document.querySelector("#lists").innerHTML = listsTemplate;
+
 }
 
 //Public

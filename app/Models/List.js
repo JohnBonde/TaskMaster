@@ -13,7 +13,7 @@ export default class List {
   //For starting out, your tasks may be strings alone, but later you may wish to turn them into full objects, that will be up to you
   get Template() {
     return `
-      <div class="col-4 m-3 p-3 rounded bg-warning">
+      <div class="grid-item col-4 m-3 p-3 rounded bg-warning">
       <h1 class="text-center border-bottom">${this.name}</h1>
       <form class="form-group" onsubmit="app.listController.addItem(event, '${this.id}')">
           <input type="text" id="item" class="form-control" placeholder="Enter Task">
@@ -25,9 +25,9 @@ export default class List {
   }
   get TemplateItem() {
     return `
-    <div class="col-4 m-3 p-3 rounded bg-warning">
+    <div class="grid-item col-4 m-3 p-3 rounded bg-warning">
       <h1 class="text-center border-bottom">${this.name}</h1>
-      <dl class="ml-5 d-flex justify-content-between align-items-center">
+      <dl class="ml-2 d-flex justify-content-between align-items-center row">
       ${this.itemTemplate}
       </dl>
       <form class="form-group" onsubmit="app.listController.addItem(event, '${this.id}')">
